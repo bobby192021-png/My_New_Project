@@ -1,0 +1,248 @@
+@import "../../assets/css/variable.scss";
+
+.authContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40px 15px;
+  min-height: 100vh;
+  position: relative;
+  @media (max-width:575px){
+    padding-block: 24px;
+  }
+  &::before {
+    content: "";
+    background-image: linear-gradient(to bottom, #fff 20%, $c_primary);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .auth_box {
+    margin: auto;
+    max-width: 480px;
+    width: 100%;
+    z-index: 9;
+    .auth_logo {
+      width: 250px;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-inline: auto;
+  @media (max-width:575px){
+    margin-bottom: 16px;
+    width: 180px;
+  }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $c_primary;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    &:has(.signup_box) {
+      max-width: 900px;
+      width: 100%;
+      .form_btn
+      {
+        justify-content: center;
+      }
+    }
+  }
+
+  .authBox {
+    padding: 30px 35px 35px;
+    background-color: $c_white;
+    border-radius: $radius_30;
+    box-shadow: $shadow;
+    @media (max-width:767px){
+      padding: 24px 16px;
+    }
+    .custom_tabs1 {
+      text-align: center;
+    }
+    .or {
+      text-align: center;
+      margin-block: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      p {
+        margin: 0;
+      }
+      &::before {
+        content: "";
+        width: 100px;
+        height: 1px;
+        background: #e6e6e6;
+      }
+      &::after {
+        content: "";
+        width: 100px;
+        height: 1px;
+        background: #e6e6e6;
+      }
+    }
+    .sign_log {
+      text-align: center;
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 1px solid #e6e6e6;
+      p {
+        margin-bottom: 30px;
+        text-align: center;
+        a {
+          color: $c_primary;
+          font-weight: 600;
+          transition: all 0.5s ease-in-out 0s;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    h2 {
+      margin: 0;
+      font-size: 25px;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 25px;
+      line-height: 1.2;
+    @media (max-width:767px){
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+
+      &:has(+ p) {
+        margin-bottom: 5px;
+      }
+    }
+
+    p {
+  
+      &:not(.ai_review){
+      text-align: center;
+    margin-bottom: 25px;
+      }
+    }
+
+    form {
+      .control_group.d_flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .remember_box {
+          .MuiFormControlLabel-root {
+            gap: 6px;
+          }
+        }
+
+        .anchor_link {
+          font-size: 14px;
+          font-weight: 400;
+          color: $c_primary;
+          text-decoration: none;
+          transition: $transition;
+          background-color: transparent;
+          cursor: pointer;
+          border: none;
+
+          &:hover {
+            color: $c_primary;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .forgotMsg {
+        display: flex;
+        align-items: center;
+        background: $c_success_bg;
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 40px;
+
+        figure {
+          margin: 0;
+          width: 35px;
+          height: 35px;
+        }
+
+        .sucdiv {
+          padding-left: 20px;
+
+          h3 {
+            font-size: 16px;
+            margin: 0;
+            color: $c_primary;
+            font-weight: 500;
+          }
+
+          h4 {
+            margin: 0;
+            font-size: 14px;
+            color: $c_primary;
+            font-weight: 400;
+          }
+        }
+      }
+
+      button.MuiButton-contained{
+        margin-top: 0;
+      }
+    }
+
+    .auth_bottom {
+      margin-top: 20px;
+      text-align: center;
+
+      p {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 0;
+
+        .link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 500;
+          color: $c_text;
+          cursor: pointer;
+          background-color: transparent;
+          gap: 5px;
+          border: none;
+
+          .MuiSvgIcon-root {
+            font-size: 18px;
+            color: $c_primary;
+          }
+
+          &:hover {
+            color: $c_primary;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+

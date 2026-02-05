@@ -1,0 +1,2725 @@
+/* Webkit scrollbars */
+@import "./variable.scss";
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $c_grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $c_primary;
+  border-radius: 50px;
+
+  &:hover {
+    background: $c_primary_hover;
+  }
+}
+
+body:has(.custom_tabs1 .custom_tabs_links) {
+  .cards {
+    border-radius: 0 0 15px 15px;
+  }
+
+  .MuiTabs-flexContainer {
+    border-radius: 15px 15px 0 0;
+  }
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  background-color: $c_highlight;
+  font-family: $f_body;
+  margin: 0;
+
+
+     
+
+
+ 
+
+   
+
+  @media (max-width:767px) {
+    font-size: 13px;
+        background: linear-gradient(to bottom, #E8D4B4 5%, #FFFFFF 20.46%);
+  }
+
+  & * {
+    font-family: $f_body !important;
+  }
+}
+
+h1,
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $c_heading;
+  margin: 0;
+
+  @media (max-width:1200px) {
+    font-size: 26px;
+  }
+
+  @media (max-width:992px) {
+    font-size: 24px;
+  }
+
+  @media (max-width:767px) {
+    font-size: 22px;
+  }
+
+  @media (max-width:575px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  color: $c_text;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Common
+.anchor_link {
+  color: $c_primary;
+  transition: $transition;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $c_primary_hover;
+    text-decoration: underline;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+:is(.gap_p, .gap_m) {
+  --gap_x: 20px;
+  --gap_y: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--gap_y) * -1);
+  margin-left: calc(var(--gap_x) * -1);
+
+  &.aic {
+    align-items: center;
+  }
+
+  &.jcsb {
+    justify-content: space-between;
+  }
+
+  &>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: var(--gap_y);
+  }
+
+  .cards {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.d_block {
+  display: block;
+}
+
+.warning {
+  color: $c_warning !important;
+}
+.flex
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.green {
+  color: $c_success !important;
+}
+
+.gap_p {
+  >* {
+    padding-left: var(--gap_x);
+  }
+
+  .w {
+    &_17 {
+      width: 17%;
+
+      @media (max-width:992px) {
+        width: calc(100% / 3);
+
+      }
+
+      @media (max-width:575px) {
+        width: calc(100%);
+
+      }
+    }
+
+    &_25 {
+      width: 25%;
+
+      @media (max-width:992px) {
+        width: calc(100% / 2);
+
+      }
+
+      @media (max-width:575px) {
+        width: calc(100%);
+
+      }
+    }
+
+    &_33 {
+      width: calc(100% / 3);
+
+      @media (max-width:992px) {
+        width: calc(100% / 2);
+
+      }
+
+      @media (max-width:575px) {
+        width: calc(100%);
+
+      }
+    }
+
+    &_50 {
+      width: 50%;
+
+      @media (max-width:575px) {
+        width: 100%;
+      }
+    }
+
+    &_66 {
+      width: calc(100% - (100% / 3));
+
+      @media (max-width:575px) {
+        width: 100%;
+      }
+    }
+
+    &_100 {
+      width: 100%;
+    }
+  }
+}
+
+.gap_m {
+  >* {
+    margin-left: var(--gap_x);
+  }
+
+  .w {
+    &_25 {
+      width: calc(25% - var(--gap_x));
+
+      @media (max-width:992px) {
+        width: calc(100%/2 - var(--gap_x));
+
+      }
+
+      @media (max-width:575px) {
+        width: calc(100% - var(--gap_x));
+
+      }
+    }
+
+    &_33 {
+      width: calc(100% / 3 - var(--gap_x));
+
+      @media (max-width:992px) {
+        width: calc(100%/2 - var(--gap_x));
+
+      }
+
+      @media (max-width:575px) {
+        width: calc(100% - var(--gap_x));
+
+      }
+    }
+
+    &_50 {
+      width: calc(50% - var(--gap_x));
+
+      @media (max-width:575px) {
+        width: calc(100% - var(--gap_x));
+
+      }
+    }
+
+    &_66 {
+      width: calc((100% - (100% / 3)) - var(--gap_x));
+
+      @media (max-width:575px) {
+        width: calc(100% - var(--gap_x));
+
+      }
+    }
+
+    &_100 {
+      width: calc(100% - var(--gap_x));
+    }
+  }
+}
+
+.c_ {
+  &primary {
+    color: $c_primary;
+  }
+
+  &success {
+    color: $c_success;
+  }
+
+  &danger {
+    color: $c_red;
+  }
+}
+
+.text_center {
+  text-align: center;
+}
+
+.cursor_p {
+  cursor: pointer;
+}
+
+// Button
+.MuiButton-root {
+  &.btn {
+    height: 45px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: capitaliz
+    e;
+    border-radius: 50px;
+    padding: 5px 25px;
+    box-shadow: none;
+    gap: 5px;
+
+    @media (max-width:767px) {
+      font-size: 13px;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+  }
+
+  &.btn_primary {
+    color: $c_white;
+    background-color: $c_primary;
+
+    &:hover {
+      background: $c_primary_gradient;
+    }
+  }
+
+  &.btn_grey {
+    color: $c_heading;
+    background-color: $c_grey;
+
+    &:hover {
+      background-color: $c_highlight;
+    }
+  }
+
+  &.btn_black {
+    color: $c_white;
+    background-color: $c_heading;
+
+    &:hover {
+      background-color: $c_primary;
+    }
+  }
+
+  &.btn_danger {
+    color: $c_white;
+    background-color: $c_red;
+
+    &:hover {
+      background-color: $c_red_hover;
+    }
+  }
+
+  &.sm {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+}
+
+// Forms
+.form {
+
+  .gap_p,
+  .gap_m {
+    --gap_x: 15px;
+    --gap_y: 20px;
+
+    .control_group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.control_group {
+  margin-bottom: 20px;
+
+  &.mb_0 {
+    margin-bottom: 0;
+  }
+
+  &.flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  .MuiOutlinedInput-root {
+    width: 100%;
+  }
+}
+
+.custom_label[class*="MuiTypography"],
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: $c_heading;
+  margin-bottom: 5px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  display: block;
+
+  @media (max-width:767px) {
+    font-size: 13px;
+  }
+
+  &.required {
+    position: relative;
+
+    &::after {
+      content: "*";
+      color: #f15050;
+      display: inline-flex;
+      margin-top: -3px;
+    }
+  }
+}
+
+.MuiFormControl-root,
+.MuiSelect-root {
+  width: 100%;
+
+  >.MuiInputBase {
+    &-root {
+      position: relative;
+      padding: 0;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      .text_btn {
+        font-size: 14px;
+        position: relative;
+        top: -3px;
+      }
+
+      &:has(.MuiInputAdornment-positionStart) {
+        .MuiInputBase-input {
+          padding-left: var(--field_height);
+        }
+      }
+
+      &:has(.MuiInputAdornment-positionEnd) {
+        .MuiInputBase-input {
+          padding-right: var(--field_height);
+        }
+
+        &:has(.text_btn) {
+          .MuiInputBase-input {
+            padding-right: 140px;
+          }
+        }
+      }
+
+      .MuiInputAdornment-positionStart,
+      .MuiInputAdornment-positionEnd {
+        top: 0;
+        width: var(--field_height);
+        height: var(--field_height);
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-height: initial;
+        margin: 0;
+      }
+
+      .MuiInputAdornment-positionStart {
+        left: 0;
+        padding-left: 6px;
+      }
+
+      .MuiInputAdornment-positionEnd {
+        right: 0;
+
+        .MuiIconButton-root {
+          padding: 0;
+          margin: 0;
+        }
+
+        &:has(.text_btn) {
+          width: auto;
+          right: 15px;
+        }
+      }
+    }
+
+    &-hiddenLabel {
+      >fieldset {
+        display: none;
+      }
+    }
+  }
+
+  &.dateTime_picker {
+    fieldset {
+      display: none;
+    }
+
+    .MuiInputAdornment-positionEnd {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+
+      button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.form {
+  --field_height: 45px;
+
+  :is(input,
+    select,
+    textarea,
+    input.form-control,
+    .MuiSelect-select,
+    .MuiAutocomplete-root .MuiInputBase-root input) {
+    color: $c_heading;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 50px;
+    border: 1px solid $c_form_border;
+    background-color: $c_form_bg;
+    transition: $transition;
+    outline: none !important;
+    box-shadow: $form_shadow;
+    box-sizing: border-box;
+
+    @media (max-width:767px) {
+      font-size: 13px;
+    }
+
+    &[readonly] {
+      color: rgba($c_heading, 0.6);
+    }
+
+    &:focus {
+      border-color: $c_primary;
+    }
+
+    &::placeholder {
+      opacity: 1;
+      color: $c_text_grey;
+      font-weight: 400;
+    }
+  }
+
+  :is(input,
+    input.form-control,
+    select,
+    .MuiSelect-select,
+    .MuiAutocomplete-root .MuiInputBase-root input) {
+    height: var(--field_height);
+    padding: 5px 20px;
+  }
+
+  :is(textarea) {
+    padding: 12px 20px;
+    height: 135px !important;
+    border-radius: 20px !important;
+
+    @media (max-width:767px) {
+      border-radius: 10px !important;
+      height: 90px !important;
+    }
+  }
+
+  :is(select,
+    .MuiSelect-select,
+    .MuiAutocomplete-root .MuiInputBase-root input) {
+    line-height: calc(var(--field_height) - 2px);
+    padding-right: 40px !important;
+    padding-block: 0 !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2307072299' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    appearance: none;
+
+    &[aria-expanded="true"] {
+      border-color: $c_primary;
+    }
+
+    &~ :is(fieldset, .MuiSvgIcon-root) {
+      display: none;
+    }
+
+    &:focus {
+      border-radius: 50px;
+    }
+
+    &:has(+ input[value="default"]) {
+      color: $c_text_grey;
+    }
+  }
+
+  :is(.MuiAutocomplete-root) {
+    .MuiFormControl-root {
+      .MuiInputBase-root {
+        padding: 0 !important;
+
+        input {
+          width: 100%;
+          order: -1;
+        }
+      }
+    }
+
+    fieldset,
+    .MuiAutocomplete-endAdornment {
+      display: none;
+    }
+  }
+
+  .opt_fields {
+    text-align: center;
+
+    >div {
+      max-width: 100%;
+      justify-content: center;
+      margin: 10px auto 0;
+      gap: 20px;
+    }
+
+    input {
+      height: 100% !important;
+      width: 100% !important;
+      aspect-ratio: 1 / 1;
+      max-width: 70px;
+      font-size: 30px !important;
+      font-weight: 500 !important;
+      border: 1px solid $c_form_border !important;
+      background-color: $c_form_bg !important;
+      border-radius: 50% !important;
+      outline: none !important;
+      padding: 5px !important;
+
+      &:focus {
+        border-color: $c_primary !important;
+      }
+
+      &:focus-visible {
+        outline: none !important;
+      }
+    }
+  }
+
+  .react-tel-input {
+    .form-control {
+      width: 100% !important;
+      padding-left: 60px !important;
+
+      &:focus {
+        border-color: $c_primary;
+        box-shadow: none;
+      }
+    }
+
+    .selected-flag {
+      padding: 0 0 0 15px;
+      width: 55px;
+
+      &::before {
+        display: none !important;
+      }
+
+      .flag {
+        transform: scale(0.8);
+
+        .arrow {
+          left: 32px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+
+          &:not(.up) {
+            border-top: 6px solid $c_heading;
+          }
+
+          &.up {
+            border-bottom: 6px solid $c_heading;
+          }
+        }
+      }
+    }
+
+    .country-list {
+      width: 300px;
+      max-height: 250px;
+      margin: 2px 0 0 0;
+
+      .search {
+        margin: 0;
+        padding: 10px;
+
+        .search-box {
+          margin: 0;
+          background-color: $c_form_border;
+          border-color: $c_form_border;
+          border-radius: 30px;
+          padding: 5px 15px;
+        }
+      }
+
+      .country {
+        font-size: 13px;
+        font-weight: 500;
+        color: $c_primary;
+        padding: 8px 10px 8px 45px;
+        margin-bottom: 0;
+      }
+
+      .flag {
+        top: 7px;
+        left: 12px;
+        margin-right: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.MuiFormControlLabel-root {
+  margin: 0 !important;
+  gap: 8px;
+
+  .MuiCheckbox-root {
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: url('data:image/svg+xml,<svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.889648 3.26948L3.26365 5.64248L8.00965 0.896484" stroke="%23fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-flex;
+      opacity: 0;
+    }
+
+    .MuiSvgIcon-root {
+      display: none;
+    }
+
+    &.Mui-checked {
+      background-color: $c_primary;
+      border-color: $c_primary;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .MuiRadio-root {
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    overflow: hidden;
+
+    .MuiSvgIcon-root {
+      display: none;
+    }
+
+    &.Mui-checked {
+      background-color: $c_white;
+      border-color: $c_primary;
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $c_primary;
+        display: inline-flex;
+      }
+    }
+  }
+
+  .MuiTypography-root {
+    font-size: 14px;
+    font-weight: 400;
+    color: $c_text;
+  }
+}
+
+.MuiFormGroup-root {
+  &.flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px 20px;
+
+    &.mt_10 {
+      margin-top: 10px;
+    }
+  }
+
+  &.list {
+    display: flex;
+    padding-top: 5px;
+    gap: 5px;
+  }
+}
+
+.checkbox_type_btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .MuiFormControlLabel-root {
+    position: relative;
+    border: 1px solid #ebebeb;
+    border-radius: 30px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    padding: 2px 14px 4px;
+
+    .MuiCheckbox-root {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .MuiTypography-root {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      color: #4f4f4f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: $transition;
+      gap: 5px;
+
+      img {
+        width: 18px;
+        min-width: 18px;
+        transition: $transition;
+        position: relative;
+        top: 1px;
+      }
+    }
+
+    &:hover {
+      border-color: $c_black;
+    }
+
+    &:has(.Mui-checked) {
+      background-color: $c_primary;
+      border-color: $c_primary;
+
+      .MuiTypography-root {
+        color: $c_white;
+
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}
+
+.form_btn {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
+  justify-content: center;
+
+  &.end {
+    justify-content: flex-end;
+  }
+
+  .btn {
+    min-width: 120px;
+
+    &.w_100 {
+      width: 100%;
+    }
+  }
+}
+
+.upload_input {
+  cursor: pointer;
+  position: relative;
+
+  .MuiFormControl-root {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #030302;
+    height: 56px;
+    padding: 0 20px;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+:is(#menu-, #basic-menu) {
+  .MuiPaper-root {
+    margin-top: 5px;
+    box-shadow: $shadow3 !important;
+    border-radius: 10px !important;
+    filter: none;
+
+    .MuiList-root {
+      padding: 10px;
+
+      .MuiButtonBase-root {
+        font-size: 13px;
+        line-height: 1.25;
+        color: $c_heading;
+        font-weight: 400;
+        min-height: 30px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        white-space: normal;
+        gap: 5px;
+
+        svg {
+          height: 18px;
+          width: 18px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 2px;
+        }
+
+        &:hover {
+          background-color: $c_highlight;
+        }
+
+        &.Mui-disabled {
+          opacity: 0.5;
+          background-color: transparent;
+        }
+
+        &.Mui-selected:not(.Mui-disabled) {
+          color: $c_white;
+          background-color: $c_primary;
+        }
+      }
+    }
+  }
+}
+
+.MuiAutocomplete-popper {
+  .MuiPaper-root {
+    margin-top: 5px;
+    box-shadow: $shadow3 !important;
+    border-radius: 10px !important;
+
+    ul {
+      max-height: 250px;
+      padding: 10px;
+
+      li {
+        font-size: 13px;
+        line-height: 1.25;
+        color: $c_heading;
+        font-weight: 400;
+        min-height: 30px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        white-space: normal;
+
+        &:not(:last-child) {
+          margin-bottom: 2px;
+        }
+
+        &:hover {
+          background-color: $c_highlight !important;
+        }
+
+        &[aria-selected="true"] {
+          color: $c_white;
+          background-color: $c_primary !important;
+        }
+
+        .MuiFormControlLabel-root {
+          width: 100%;
+          pointer-events: none;
+
+          .MuiTypography-root {
+            font-size: 13px;
+            line-height: 1.25;
+            color: $c_heading;
+            font-weight: 400;
+          }
+        }
+
+        &:has(.MuiCheckbox-root) {
+          &[aria-selected="true"] {
+            color: $c_heading;
+            background-color: $c_white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.iframe {
+  display: flex;
+  border: none;
+  border-radius: $radius_15;
+}
+
+.section_title {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &.subTitle {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #ededed;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+}
+
+.mid_title {
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 25px;
+    margin-top: 25px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: $c_heading;
+  }
+}
+
+.mt_20 {
+  margin-top: 20px ;
+}
+
+.mt_10 {
+  margin-top: 10px !important;
+}
+
+// Modal
+.modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .MuiBackdrop-root {
+    background-color: #030302;
+    opacity: 0.5 !important;
+  }
+
+  .modal-dialog {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - (20px * 2));
+    margin: 20px auto;
+    position: relative;
+    max-width: 550px;
+    outline: none;
+
+    &.sm {
+      max-width: 400px;
+    }
+
+    &.lg {
+      max-width: 800px;
+    }
+  }
+
+  .modal-body {
+    width: 100%;
+    padding: 0 20px 25px;
+    background-color: $c_white;
+    max-height: calc(100% - (20px * 2));
+    border-radius: 10px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: none;
+  }
+
+  .modal_title {
+    top: 0;
+    left: 0;
+    position: sticky;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $c_form_border;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 12px 20px;
+
+    h2 {
+      font-size: 18px;
+      text-transform: capitalize;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 14px;
+      color: #2c2c2c;
+      font-weight: 500;
+      margin-block: 15px 20px;
+    }
+  }
+
+  .btn-close {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    opacity: 1;
+    border: none;
+
+    svg {
+      font-size: 18px;
+      color: #292d32;
+      transition: $transition;
+    }
+
+    &:hover {
+      svg {
+        color: $c_red;
+      }
+    }
+  }
+
+  .footer_btn_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  &.addReply_modal,
+  &.commissionOffer_modal {
+    .form {
+      margin-top: 30px;
+    }
+
+    .section_title {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Accordion
+.custom_accordion {
+  .MuiAccordion-root {
+    box-shadow: none;
+    background-color: transparent;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    .MuiAccordionSummary-root {
+      min-height: 52px;
+      background-color: $c_highlight;
+      border-radius: 10px;
+      padding: 5px 15px 5px 20px;
+
+      .MuiAccordionSummary-content {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #030302;
+      }
+
+      .MuiAccordionSummary-expandIconWrapper {
+        background-color: $c_white;
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #292d32;
+        transform: rotate(-90deg);
+      }
+    }
+
+    .MuiAccordionDetails-root {
+      padding: 0;
+    }
+
+    &.Mui-expanded {
+      margin: 10px 0 0;
+
+      .MuiAccordionSummary-root {
+        .MuiAccordionSummary-expandIconWrapper {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+
+  .profileInfo_list {
+    padding: 20px;
+  }
+}
+
+// Tabs
+
+.custom {
+  &_tabs {
+
+    .custom_tabs_links {
+      margin-bottom: 20px;
+      padding-top: 5px;
+      min-height: 1px;
+
+
+
+      .MuiTabs-flexContainer {
+        display: inline-flex;
+        gap: 30px;
+
+        +.MuiTabs-indicator {
+          display: none;
+        }
+
+        button {
+          min-width: 1px;
+          min-height: 1px;
+          padding: 0 0 5px;
+          font-size: 13px;
+          font-weight: 500;
+          color: #717171;
+          max-width: initial;
+          text-transform: capitalize;
+          background-color: transparent;
+          line-height: normal;
+          letter-spacing: 0;
+          border-radius: 0;
+          transition: $transition;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: $c_primary;
+            transition: $transition;
+          }
+
+          &:hover {
+            color: $c_black;
+          }
+
+          &.Mui-selected {
+            color: $c_black;
+
+            &::before {
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    [role="tabpanel"] {
+      >.MuiBox-root {
+        padding: 0;
+      }
+    }
+  }
+
+  &_tabs1 {
+    margin-bottom: 20px;
+
+    .custom_tabs_links {
+      min-height: 1px;
+      box-shadow: $shadow;
+      border-radius: 50px;
+      display: inline-flex;
+
+      .MuiButtonBase-root.MuiTabScrollButton-root {
+        width: 20px;
+
+        &.Mui-disabled {
+          opacity: 0.1;
+        }
+      }
+
+      .MuiTabs-flexContainer {
+        display: inline-flex;
+        background-color: $c_white;
+        padding: 5px;
+        gap: 5px;
+
+        +.MuiTabs-indicator {
+          display: none;
+        }
+
+        button {
+          color: $c_text;
+          padding: 0 15px;
+          font-size: 13px;
+          font-weight: 500;
+          min-height: 35px;
+          text-transform: capitalize;
+          border-radius: 50px;
+          line-height: normal;
+          transition: $transition;
+          letter-spacing: -0.2px;
+
+          &:hover {
+            color: $c_black;
+            background-color: $c_grey;
+          }
+
+          &.Mui-selected {
+            color: $c_white;
+            background-color: $c_primary;
+            box-shadow: $shadow2;
+          }
+        }
+      }
+    }
+
+    [role="tabpanel"] {
+      >.MuiBox-root {
+        padding: 0;
+      }
+    }
+  }
+
+  &_tabs2 {
+    margin: 15px 0;
+
+    .custom_tabs_links {
+      min-height: 1px;
+
+      .MuiTabs-flexContainer {
+        gap: 2px;
+
+        +.MuiTabs-indicator {
+          display: none;
+        }
+
+        button {
+          min-height: 50px;
+          padding: 0 20px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #767676;
+          text-transform: capitalize;
+          border-radius: 8px;
+          line-height: normal;
+          transition: $transition;
+          letter-spacing: 0;
+
+          &:hover {
+            color: $c_black;
+          }
+
+          &.Mui-selected {
+            color: $c_white;
+            background-color: $c_primary;
+          }
+        }
+      }
+    }
+
+    [role="tabpanel"] {
+      >.MuiBox-root {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Upload Image
+.upload_image {
+  cursor: pointer;
+  display: inline-flex;
+  margin-bottom: 14px !important;
+  position: relative;
+
+  input[type="file"] {
+    position: absolute;
+    inset: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    text-indent: -1000px;
+  }
+
+  &_holder {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.square {
+      figure {
+        border-radius: 5px;
+
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+
+    figure {
+      width: 100px;
+      height: 100px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $c_white;
+      border: 1px solid $c_form_border;
+      transition: $transition;
+      border-radius: 50%;
+      position: relative;
+
+      padding: 3px;
+
+      >img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &.square {
+      figure {
+        border-radius: 5px;
+        width: 200px;
+        height: 200px;
+
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+
+    svg,
+    .upload_img_icon {
+      width: 32px;
+      height: 32px;
+      color: $c_white;
+      border-radius: 50%;
+      border: 2px solid $c_white;
+      background: $c_primary;
+      transition: $transition;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+    
+    }
+
+  }
+
+  &:hover {
+    .upload_image_holder {
+      figure {
+        border-color: $c_primary;
+      }
+
+      svg,
+      .upload_img_icon {
+        background-color: $c_primary;
+      }
+    }
+  }
+
+  &.no_radius {
+    .upload_image_holder {
+      figure {
+        border-radius: 5px;
+
+        >img {
+          border-radius: 5px;
+        }
+      }
+
+      svg,
+      .upload_img_icon {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0);
+        bottom: -16px;
+      }
+    }
+  }
+
+  &.v2 {
+    width: 100%;
+    margin-bottom: 0 !important;
+
+    .upload_image_holder {
+      width: 100%;
+      aspect-ratio: 1 / 0.6;
+
+      figure {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+body {
+  
+  &:has(.sidebar-main-div:not(.active):hover) {
+    .MuiTooltip-popper {
+      display: none !important;
+    }
+ 
+    }
+
+
+  &:has(.sidebar-main-div.active) {
+    .MuiTooltip-popper {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+    }
+
+    .MuiTooltip-tooltip {
+      margin: 0;
+      background: $c_black;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 0;
+        position: absolute;
+        transform: translate(-100%, -50%);
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 6px solid $c_black;
+        transition: $transition;
+      }
+    }
+  }
+}
+
+
+
+
+/* Arpit scss */
+.orders-wrapper {
+  display: flex;
+  gap: 20px;
+
+  /* Left Section */
+  .orders-list {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+
+    height: fit-content;
+
+    .MuiTabs-root.site_tabs1 {
+
+      //  overflow: visible;
+      .MuiTabs-flexContainer {
+        //         margin-inline: -12px;
+        // padding-inline: 12px;
+        width: 100%;
+
+        // overflow: visible;
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .order_cards_inner {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .order-card {
+    border-radius: 15px;
+    margin-top: 15px;
+    overflow: hidden;
+    width: calc(100%/2 - 20px*1/2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .order-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    padding: 8px 12px;
+    background: #131313;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status {
+    font-weight: 400;
+    color: #d3b88c;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .order-id {
+    font-size: 12px;
+    color: #ddd;
+    margin: 0;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .order-body {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    align-items: flex-start;
+    border: 1px solid #d3b88c;
+    border-radius: 0px 0px 15px 15px;
+    border-top: none;
+    position: relative;
+    flex: 1;
+  }
+
+  .order-body img {
+    width: 78px;
+    height: 78px;
+    border-radius: 8px;
+  }
+
+  .srt_img_ts img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .srt_img_ts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .order-info {
+    flex: 1;
+
+    p {
+      margin: 2px 0;
+      font-size: 12px;
+      display: inline-flex;
+      line-height: 1.2;
+      align-items: center;
+      color: $c_black;
+      width: 100%;
+    }
+  }
+
+  strong {
+    margin: 0px 2px;
+    margin-left: 0;
+    color: $c_heading;
+    font-size: 16px;
+
+    &.ml_auto {
+      margin-left: auto;
+    }
+  }
+
+  p.prdct_dtl {
+    color: #505050;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  span.order_stts {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #d3b88c;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: $c_heading;
+  }
+
+  .prdct_dtl span {
+    color: #131313;
+  }
+
+  .order-info .price {
+    font-weight: 600;
+  }
+
+  /* Right Section */
+  .order-details {
+    flex: 2;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 9px 20px 3px #0000001a;
+  }
+
+  figure.prdct_img {
+    width: 170px;
+    height: 120px;
+    min-width: 170px;
+  }
+
+  figure.prdct_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .order-detail-header p {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: $c_heading;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .order-detail-header {
+    background: #f4e4c9;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 14px;
+  }
+
+  .prdct_smry_wrpr {
+    padding: 20px;
+  }
+
+  .product-summary {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #dfd2d2;
+    padding: 15px 0px;
+
+  }
+
+  .summary-info {
+    width: 70%;
+    position: relative;
+    flex: 1;
+
+    button.MuiButton-root.MuiButton-outlinedPrimary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      min-width: 65px;
+      border-radius: 6px;
+      min-height: 28px;
+    }
+  }
+
+  .summary-info h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .summary-info p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px;
+    color: #505050;
+    line-height: 22px;
+  }
+
+  .summary-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px 0px;
+    line-height: 22px;
+  }
+
+  .summary-info h4 span {
+    color: #505050;
+  }
+
+  .summary-info h5 span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  .summary-info h5 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0px;
+    line-height: 22px;
+  }
+
+  .summary-info .order-header.confirmed {
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+
+  .summary-info .order-header.confirmed button.MuiButton-root {
+    min-height: 34px;
+    margin-left: auto;
+    border-radius: 5px;
+    min-width: 105px;
+  }
+
+  .prdct_smry_wrpr .order-header.confirmed {
+    border-radius: 10px;
+  }
+
+  .summary-info .order-header.confirmed .status {
+    color: #d3b88c;
+  }
+
+  .summary-info .order-header.confirmed .order-id {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .product-summary:last-child {
+    border: none;
+  }
+
+  .rght_ordr_stts {
+    margin-top: 15px;
+
+    button.MuiButton-root.MuiButton-textPrimary {
+      margin-left: auto;
+      border-radius: 5px;
+      min-width: 105px;
+      min-height: 34px;
+    }
+  }
+
+  .flx_addrs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    p {
+      margin: 0;
+      color: $c_black;
+
+      span {
+        color: $c_body;
+      }
+    }
+  }
+
+  .status-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .status-line p {
+    margin: 0;
+    font-weight: 600;
+    color: #f0c26c;
+  }
+
+  .track-btn {
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+
+  .delivery-address {
+    border: 1px solid #d3b88c;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .delivery-address h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .flx_addrs p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .flx_addrs p span {
+    color: #505050;
+  }
+
+  .view-btn {
+    background: #fff;
+
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .priceDetail_box {
+    margin-top: 20px;
+
+    &.size_sm ul li {
+      font-size: 14px;
+
+      strong {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .payment-status {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .btn_flex {
+      width: 100%;
+
+      button {
+        min-height: 50px;
+        flex: 1;
+        font-size: 16px;
+        font-weight: 700;
+
+
+      }
+    }
+  }
+
+  .paid-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 10px;
+    font-size: 16px;
+    width: 100%;
+    background: #131313;
+    text-align: left;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .cancel-btn {
+    background: #fff;
+    border: 1px solid #d3b88c;
+    border-radius: 6px;
+    padding: 10px 10px;
+    font-size: 13px;
+    color: #000;
+    cursor: pointer;
+    width: 100%;
+  }
+}
+
+.filter_aside {
+  box-shadow: $form_shadow;
+  border-radius: $radius_15;
+  height: 100%;
+
+  .filter_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px 0;
+    gap: 15px;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #656363;
+      font-weight: 400;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .MuiFormControlLabel-root {
+
+    gap: 12px;
+    border: none !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    min-height: 30px !important;
+    padding: 5px 10px !important;
+
+    .MuiTypography-root {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  .accordion_list {
+    .MuiAccordion-root {
+      &::before {
+        content: "";
+        left: 0;
+        top: -1px;
+        right: 0;
+        height: 1px;
+        position: absolute;
+        background-color: #e8e8e8;
+        display: block;
+        opacity: 1;
+      }
+
+      &:first-child {
+        &::before {
+          display: none;
+        }
+      }
+
+      .MuiAccordion-heading {
+        .MuiAccordionSummary-root {
+          min-height: 1px;
+          padding: 20px 15px;
+
+          .MuiAccordionSummary-content {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: $c_black;
+          }
+
+          .MuiAccordionSummary-expandIconWrapper {
+            svg {
+              color: $c_black;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      .MuiAccordionDetails-root {
+        padding: 0 15px 20px;
+
+        .color_dot {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          display: inline-flex;
+          border: 1px solid $c_grey;
+          margin-right: 5px;
+        }
+
+        .stars {
+          display: flex;
+          align-items: center;
+          letter-spacing: 3px !important;
+          color: #ffc107;
+          line-height: 1;
+          font-size: 24px;
+
+          .unfilled_star {
+            color: #8fa0a1;
+            letter-spacing: 3px !important;
+          }
+        }
+
+        .price_form {
+          display: flex;
+          align-items: center;
+          --field_height: 38px;
+          gap: 15px;
+
+          .MuiFormControl-root {
+            width: auto;
+            flex: 1;
+
+            input {
+              font-size: 18px;
+              padding: 0 15px;
+              border-radius: 5px;
+            }
+          }
+
+          span {
+            color: 18px;
+            color: #8fa0a1;
+            white-space: nowrap;
+          }
+
+          .MuiButtonBase-root {
+            color: 18px;
+            color: $c_black;
+            white-space: nowrap;
+            min-height: var(--field_height);
+            background-color: transparent;
+            border-radius: 0;
+            min-width: 1px;
+            border: none;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.productCard_grid {
+  .productCard_item {
+    background-color: $c_white;
+    width: calc(100% / 5 - var(--gap_x));
+    border: 1px solid #e8e8e8;
+    border-radius: $radius_15;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    .overlay_link {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .card_figure {
+      aspect-ratio: 1 / 0.8;
+      border-radius: $radius_15;
+      margin: -1px -1px 0 -1px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .rating {
+        left: 10px;
+        bottom: 10px;
+        position: absolute;
+        background-color: $c_primary;
+        border-radius: 8px 8px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        min-width: 45px;
+        z-index: 1;
+
+        span {
+          font-size: 12px;
+          font-weight: 700;
+          color: $c_white;
+          display: inline-flex;
+          justify-content: center;
+          padding: 2px 5px;
+          line-height: 1;
+        }
+
+        strong {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1;
+          background-color: $c_white;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: $radius_30;
+          min-height: 20px;
+          color: $c_black;
+          padding: 2px 5px;
+          gap: 0;
+
+          svg {
+            font-size: 16px;
+            color: $c_primary;
+            margin-right: -2px;
+            position: relative;
+            top: -1px;
+          }
+        }
+      }
+
+      .ranking {
+        right: 10px;
+        bottom: 10px;
+        position: absolute;
+        background-color: $c_white;
+        border-radius: 5px 5px 10px 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        min-width: 70px;
+        z-index: 1;
+
+        span {
+          color: $c_white;
+          font-size: 10px;
+          font-weight: 400;
+          padding: 2px 5px;
+          line-height: 1;
+          background-color: $c_primary;
+          border-radius: 5px;
+        }
+
+        strong {
+          font-size: 10px;
+          font-weight: 500;
+          padding: 4px 3px 2px;
+          display: inline-flex;
+          min-height: 18px;
+          color: $c_black;
+          line-height: 1;
+        }
+      }
+
+      .match {
+        top: 15px;
+        right: 15px;
+        position: absolute;
+        background-color: $c_primary;
+        border-radius: 5px;
+        color: $c_white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: center;
+        padding: 3px 10px;
+        line-height: 1.25;
+        font-size: 12px;
+        gap: 5px;
+
+        img {
+          width: 12px;
+          min-width: 12px;
+          filter: brightness(0) invert(1);
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+
+    .card_info {
+      padding: 10px;
+
+      .flex_head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        gap: 15px;
+
+        h3 {
+          font-weight: 700;
+          margin-bottom: 0;
+          @include content_limit(2);
+        }
+
+        .MuiCheckbox-root {
+          padding: 0;
+          position: relative;
+          z-index: 2;
+
+          img {
+            min-width: 22px;
+            width: 22px;
+          }
+        }
+      }
+
+      p {
+        color: #505050;
+        line-height: 1.2;
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+
+        &.price {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 6px;
+
+          * {
+            display: inline-flex;
+            vertical-align: middle;
+          }
+
+          ins {
+            color: $c_black;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: normal;
+            text-decoration: none;
+          }
+
+          del {
+            color: #8fa0a1;
+            font-size: 14px;
+            font-weight: 400;
+            position: relative;
+            top: 2px;
+          }
+
+          .discount {
+            color: $c_primary;
+            font-size: 18px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &.card_sm {
+      .card_figure {
+        aspect-ratio: 1 / 0.8;
+
+        .rating {
+          left: 8px;
+          bottom: 8px;
+          border-radius: 8px 8px 20px 20px;
+          min-width: 38px;
+
+          span {
+            font-size: 10px;
+            padding: 2px 5px;
+          }
+
+          strong {
+            font-size: 12px;
+            min-height: 18px;
+            padding: 2px 5px;
+
+            svg {
+              font-size: 14px;
+              top: 0;
+            }
+          }
+        }
+      }
+
+      .card_info {
+        padding: 8px;
+
+        .flex_head {
+          margin-bottom: 6px;
+          gap: 15px;
+
+          h3 {
+            font-size: 16px;
+          }
+
+          .MuiCheckbox-root {
+            img {
+              min-width: 18px;
+              width: 18px;
+            }
+          }
+        }
+
+        p {
+          font-size: 13px;
+
+          &:not(:last-child) {
+            margin-bottom: 6px;
+          }
+
+          &.price {
+            gap: 5px;
+
+            ins {
+              font-size: 16px;
+            }
+
+            del {
+              font-size: 12px;
+              top: 1px;
+            }
+
+            .discount {
+              font-size: 15px;
+              position: relative;
+              top: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media(max-width: 991px) {
+  .filter_btn_mobile {
+    display: inline-flex;
+  }
+
+  .desktop_only {
+    display: none;
+  }
+}
+
+.page_head {
+  gap: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+
+
+}
+
+.sort_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  p {
+    color: $c_black;
+    margin-bottom: 0;
+  }
+
+  .MuiSelect-root {
+    width: auto;
+    height: 30px;
+  }
+}
+
+.close_btn_drawer {
+  position: absolute !important;
+  top: 20px;
+  background-color: $c_primary !important;
+
+  border-radius: 5px !important;
+  padding: 5px !important;
+  right: 20px;
+
+  svg {
+    color: $c_white;
+  }
+}
+
+.MuiDrawer-paper {
+  padding: 0 !important;
+}
+
+.services {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .service-card {
+    width: calc(100%/3 - 20px*2/3);
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.2s ease;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $c_primary;
+    }
+
+    .card_top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      figure {
+        height: 50px;
+        width: 50px;
+        border-radius: 8px;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+
+        span {
+          display: block;
+          margin-top: 3px;
+          font-size: 16px;
+          font-weight: 400;
+          color: #2c2c2c99;
+        }
+      }
+
+    }
+
+    h4 {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #d3b88c1a;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 50px;
+      padding: 5px 10px;
+
+      .MuiSvgIcon-root {
+        color: $c_primary;
+        font-size: 14px;
+      }
+    }
+
+    p {
+      margin-block: 10px;
+    }
+
+
+  }
+}
+
+.book_service {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+  .book_inner {
+    padding: 15px;
+    background:$c_white;
+    border-radius: 15px;
+    width: calc(100%/4 - 20px*3/4);
+    border: 1px solid #d0ab6f ;
+    figure
+    {
+      height: 200px;
+      border-radius: 15px;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 12px;
+      img
+      {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #5a5753;
+      margin-block: 10px;
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $c_primary;
+      p {
+        font-size: 14px;
+        color: #5a5753;
+        margin: 0;
+      }
+      .price
+      {
+        font-size: 18px;
+        color: $c_primary;
+
+
+      }
+    }
+    .MuiButton-root
+    {
+      width: 100%;
+    }
+
+
+  }
+}
