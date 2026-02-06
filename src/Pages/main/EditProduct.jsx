@@ -11,17 +11,15 @@ const EditProduct = () => {
 
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState([]); // ALWAYS ARRAY
+  const [image, setImage] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // 🔥 PREFILL DATA (FIXED)
   useEffect(() => {
     if (product) {
       setTitle(product.title || "");
       setPrice(product.price || "");
 
-      // normalize image
       if (typeof product.image === "string") {
         setImage([{ url: product.image, type: "image" }]);
       } else if (Array.isArray(product.image)) {
@@ -32,7 +30,7 @@ const EditProduct = () => {
     }
   }, [product]);
 
-  // 🔥 UPDATE API
+  //edit data 
   const handleUpdate = async () => {
     setLoading(true);
     setError("");
@@ -43,7 +41,7 @@ const EditProduct = () => {
         {
           title,
           price,
-          image: image[0]?.url, // FakeStoreAPI only accepts URL
+          image: image[0]?.url,
         }
       );
 
@@ -55,7 +53,7 @@ const EditProduct = () => {
     }
   };
 
-  // 🔥 IMAGE CHANGE
+   
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const imageArray = [];
@@ -85,45 +83,31 @@ const EditProduct = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <div className="outer">
-      <h2 className="addAPIheading">Edit Product</h2>
+      <h2 className="addAPIheading">Edit Your Product </h2>
         <div className="editAPIedit">
 
-          <label>Title</label>
           <input
-          className="editAPItext"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter title"
-          />
-
-          <label>Price</label>
-          <input
-          className="editAPItext"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            placeholder="Enter price"
-          />
-
-          <input
-          className="editAPItext"
+          className="editAPIvideo"
             type="file"
             accept="image/*,video/*"
             multiple
             onChange={handleImageChange}
           />
-          <div className="editAPItext"> 
+
+           <div className="editAPIimage"> 
           {image.length > 0 && (
             <>
 
               <CloseIcon
                 onClick={() => setImage([])}
-                style={{ cursor: "pointer", margin: "10px 0" }}
+                style={{ cursor: "pointer" }}
               />
 
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                 {image.map((img, index) =>
                   img.type.startsWith("image") ? (
                     <img
+                      className="editAPIinner"
                       key={index}
                       src={img.url}
                       alt="preview"
@@ -142,8 +126,24 @@ const EditProduct = () => {
             </>
           )}
           </div>
+
+          <label>Title</label>
+          <input
+          className="editAPItitle"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter title"
+          />
+
+          <label>Price</label>
+          <input
+          className="editAPIprice"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            placeholder="Enter price"
+          />
           
-          <button onClick={handleUpdate}>
+          <button className="editAPIupButton" onClick={handleUpdate}>
             Update Product
           </button>
 

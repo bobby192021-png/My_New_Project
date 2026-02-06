@@ -19165,6 +19165,24 @@ button.icon_btn:hover {
  margin-bottom: 10px;
 }
 
+.showTopbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border: 2px solid black;
+  background-color: whitesmoke;
+  color: black;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 891px;
+ border-radius: 10px;
+ margin-bottom: 20px;
+
+}
+
 /* Logo */
 .logo {
   font-size: 1.5rem;
@@ -19404,7 +19422,8 @@ padding: 10px 10px 10px 10px;
   margin-bottom: 20px; 
 }
 .ApiProduct{
-  margin-left: 740px;
+  display: flex;
+  // margin-left: 600px;
 }
 .ApiF{
   border: 1px solid black;
@@ -19430,8 +19449,9 @@ padding: 10px 10px 10px 10px;
   object-fit: contain; /* product cut nahi hoga */
 }
 .productTitle{
-  min-height: 48px;   /* sab title equal space lenge */
+  min-height: 48px;  
   font-weight: 600;
+  margin-left: 22px
 }
 .productActions{
   margin-top: auto;   /* ⭐ MAGIC LINE */
@@ -19440,17 +19460,19 @@ padding: 10px 10px 10px 10px;
 }
 .addAPI{
   background-color: lightgray;
-  max-width: 274px;
+  max-width: 500px;
   width: 100%;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 22px;
+  // border-radius: 20px;
   margin-top: 20px;
-  margin-left: 307px;
-
+  margin-left: 190px;
+  justify-content: center;
+  gap: 10px;
 
   display: flex;
   flex-direction: column;
   height: 100%;
+  height: auto;
 }
 .addAPItext{
   padding: 15px;
@@ -19463,20 +19485,52 @@ padding: 10px 10px 10px 10px;
  border-radius: 10px;
 }
 .editAPIedit{
-background-color: lightgray;
-  max-width: 274px;
+  background-color: lightgray;
+  max-width: 500px;
   width: 100%;
   padding: 22px;
-  border-radius: 20px;
+  // border-radius: 20px;
   margin-top: 20px;
-  margin-left: 307px;
-
+  margin-left: 190px;
+  justify-content: center;
+  gap: 10px;
 
   display: flex;
   flex-direction: column;
   height: 100%;
+  height: 420px;
 }
 .productHeading{
    background: gray !important;
     color: #fff !important;
+}
+.editAPIimage{
+  margin-left: 200px;
+}
+.editAPIupButton{
+  margin-top: 20px;
+}
+.editAPItitle{
+  height:30px;
+}
+.editAPIprice{
+  height:30px;
+}
+
+.addAPItitle{
+  width: 490px;
+  height: 30px;
+}
+.addAPIprice{
+  width: 490px;
+  height: 30px;
+}
+.addAPIimage{
+  padding-top: 20px;
+}
+.addAPIinner{
+  padding-left: 200px;
+}
+.pppp{
+  margin-left: 567px;
 }

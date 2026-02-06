@@ -19,6 +19,7 @@ import { LocalLaundryService, Visibility, VisibilityOff } from "@mui/icons-mater
 import PhoneInput from "react-phone-input-2";
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../firebaseConfiguration/config";
+import { toast } from "react-toastify";
 // import { signInWithPopup } from "firebase/auth";
 // import { auth, googleProvider } from "../../firebaseConfiguration/config";
 
@@ -58,7 +59,9 @@ const Login = () => {
         (user)=>user.email === email && user.password === password
       )       
       if(foundUsers){
-        alert("Login successFully")
+        toast.success("Login successFully",{
+          position:"top-center"
+        })
         localStorage.setItem("isLoggedIn", true); 
         navigate("/home-page")
       }else{

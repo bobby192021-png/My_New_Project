@@ -4,49 +4,56 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-
 const AddProductApi = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState([]);
 
-  const [title, setTitle] = useState("")
-  const [price, setPrice] = useState("")
-  const [image, setImage] = useState([])
-
+  // ---------- HANDLE SUBMIT ----------
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !price || !image) {
+    if (!title || !price || image.length === 0) {
       toast.warning("All fields are required");
       return;
     }
 
     const product = {
-      title: title,
-      price: price,
-      image: image,
-    }
+      title,
+      price,
+      image,
+    };
 
     try {
       const response = await axios.post(
         "https://fakestoreapi.com/products",
-
         product,
-
         {
           headers: {
-            "content-type": "application/json",
+            "Content-Type": "application/json",
           },
         }
-      )
-      console.log(response.data, "Product Added")
-      toast.success("product Added ")
+      );
+
+      console.log(response.data, "Product Added");
+      toast.success("Product added successfully");
+
+      // clear form
+      setTitle("");
+      setPrice("");
+      setImage([]);
+
+      // optional navigation
+      // navigate("/");
     } catch (error) {
-      console.log(error, "error")
-      toast.error(error, "Error")
+      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
+  // ---------- HANDLE IMAGE ----------
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const imageArray = [];
@@ -57,7 +64,7 @@ const AddProductApi = () => {
       reader.onloadend = () => {
         imageArray.push({
           url: reader.result,
-          type: file.type, // image/png, video/mp4 etc
+          type: file.type,
         });
 
         if (imageArray.length === files.length) {
@@ -70,95 +77,98 @@ const AddProductApi = () => {
   };
 
   return (
-    <>
+    <div className="outer">
+      <h2 className="addAPIheading">Add Your Product</h2>
 
-      <div className="outer">
-
-        <h2 className="addAPIheading"> Add Product </h2>
-
+      <form onSubmit={handleSubmit}>
         <div className="addAPI">
-          <div className="addAPItext">
-            <label htmlFor="title">Title</label>
+          {/* TITLE */}
+            <label>Title</label>
             <input
-              className="editAPItext"
+              className="addAPItitle"
               type="text"
               placeholder="Enter title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-          </div>
 
-          <div className="addAPItext">
-            <label htmlFor="price">Price</label>
+          {/* PRICE */}
+  
+            <label>Price</label>
             <input
-              className="editAPItext"
+              className="addAPIprice"
               type="number"
               placeholder="Enter price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />
-          </div>
 
-          <div className="addAPItext">
+          {/* IMAGE INPUT */}
             <input
+            className="addAPIimage"
               type="file"
               accept="image/*,video/*"
-              onChange={handleImageChange}
               multiple
+              onChange={handleImageChange}
             />
-          </div>
 
+          {/* PREVIEW */}
           <div className="editAPItext">
-            {
-              image.length ?
-
+            {image.length > 0 && (
+              <>
                 <CloseIcon
                   onClick={() => {
-                    setImage([]);
-                    setName("");
+                    setTitle("");
                     setPrice("");
+                    setImage([]);
                   }}
                   style={{ cursor: "pointer", marginLeft: 10 }}
-                /> : null}
-            {image.length > 0 && (
-              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                {image.map((image, index) =>
-                  image.type.startsWith("image") ? (
-                    <img
-                      key={index}
-                      src={image.url}
-                      alt="preview"
-                      style={{ height: 100, width: 100, objectFit: "cover" }}
-                    />
-                  ) : (
-                    <video
-                      key={index}
-                      src={image.url}
-                      controls
-                      style={{ height: 100, width: 100 }}
-                    />
-                  )
-                )}
-              </div>
+                />
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    flexWrap: "wrap",
+                    marginTop: "10px",
+                  }}
+                >
+                  {image.map((item, index) =>
+                    item.type.startsWith("image") ? (
+                      <img
+                      className="addAPIinner"
+                        key={index}
+                        src={item.url}
+                        alt="preview"
+                        style={{
+                          height: 100,
+                          width: 100,
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      <video
+                        key={index}
+                        src={item.url}
+                        controls
+                        style={{ height: 100, width: 100 }}
+                      />
+                    )
+                  )}
+                </div>
+              </>
             )}
-
-          </div>
-          <div className="addAPItext">
-            <button
-              className="addButton"
-              onClick={() => {
-                { { handleSubmit } navigate("/products") }
-                toast.success("product Added ")
-              }
-              }
-            >Add Product </button>
           </div>
 
+          {/* BUTTON */}
+          
+            <button className="addButton" type="submit">
+              Add Product
+            </button>
         </div>
-      </div>
-    </>
-
-  )
-}
+      </form>
+    </div>
+  );
+};
 
 export default AddProductApi;
